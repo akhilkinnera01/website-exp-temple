@@ -1,17 +1,128 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Varun Estates | Premium Plotted Land">
+	<main class="relative w-full h-[200vh]">
+		<!-- Sticky Hero Section -->
+		<section class="sticky top-0 h-screen w-full overflow-hidden bg-[#0A192F] flex flex-col justify-center items-center" id="hero-section">
+			<!-- Background Image with zoom effect -->
+			<div class="absolute inset-0 w-full h-full z-0 origin-center scale-100 opacity-60" id="hero-bg">
+				<!-- Placeholder for the Nano Banana generated sunrise image -->
+				<div class="w-full h-full bg-gradient-to-b from-[#0A192F] to-[#A85C4B]/50"></div>
+			</div>
+			
+			<!-- Content overlay -->
+			<div class="relative z-10 w-full max-w-7xl px-6 md:px-12 mx-auto flex flex-col items-center justify-center text-center mt-20">
+				<!-- Logo -->
+				<img src="/logo.png" alt="Varun Estates Logo" class="w-24 md:w-32 mb-12 opacity-0" id="hero-logo" />
+				
+				<!-- Bilingual Typography -->
+				<h1 class="text-5xl md:text-8xl lg:text-9xl text-[#F7F5F0] leading-tight tracking-tight mb-6 flex flex-col gap-4">
+					<span class="opacity-0 translate-y-12 hero-text block">Land, Honored.</span>
+					<span class="opacity-0 translate-y-12 hero-text block text-4xl md:text-7xl text-[#C49A6C] font-serif">గౌరవప్రదమైన భూమి.</span>
+				</h1>
+				<p class="text-lg md:text-2xl text-[#F7F5F0]/80 max-w-2xl font-light opacity-0 translate-y-8 mt-8" id="hero-subtext">
+					A calm, respectful, and confidence-building land buying experience for the long-view investor.
+				</p>
+			</div>
+		</section>
+		
+		<!-- Next Section Placeholder to allow scrolling -->
+		<section class="relative z-20 bg-[#F7F5F0] w-full min-h-screen rounded-t-[3rem] -mt-12 flex flex-col items-center justify-center py-32 px-6">
+			<h2 class="text-4xl md:text-6xl text-[#0A192F] mb-8 font-serif opacity-0 translate-y-12" id="about-heading">The Varun Promise</h2>
+			<p class="text-xl text-[#0A192F]/70 max-w-3xl text-center leading-relaxed">
+				We believe in transparency, dignity, and heritage. Discover land ventures built with the Telugu family in mind.
+			</p>
+		</section>
+	</main>
+
+	<script>
+		import { gsap } from 'gsap';
+		import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+		gsap.registerPlugin(ScrollTrigger);
+
+		// Respect prefers-reduced-motion
+		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+		if (!prefersReducedMotion) {
+			// Initial load animation
+			const tl = gsap.timeline();
+			
+			tl.to('#hero-logo', {
+				opacity: 1,
+				duration: 1.5,
+				ease: 'power2.inOut'
+			})
+			.to('.hero-text', {
+				y: 0,
+				opacity: 1,
+				duration: 1.2,
+				stagger: 0.3,
+				ease: 'power3.out'
+			}, '-=1.0')
+			.to('#hero-subtext', {
+				y: 0,
+				opacity: 1,
+				duration: 1.2,
+				ease: 'power2.out'
+			}, '-=0.8');
+
+			// Scroll-scrubbed signature moment
+			gsap.to('#hero-bg', {
+				scale: 1.15,
+				opacity: 0.3,
+				ease: 'none',
+				scrollTrigger: {
+					trigger: '#hero-section',
+					start: 'top top',
+					end: 'bottom top',
+					scrub: true
+				}
+			});
+
+			gsap.to('.hero-text', {
+				y: -50,
+				opacity: 0,
+				ease: 'none',
+				scrollTrigger: {
+					trigger: '#hero-section',
+					start: 'top top',
+					end: 'bottom top',
+					scrub: true
+				}
+			});
+
+			gsap.to('#hero-subtext, #hero-logo', {
+				y: -30,
+				opacity: 0,
+				ease: 'none',
+				scrollTrigger: {
+					trigger: '#hero-section',
+					start: 'top top',
+					end: 'bottom top',
+					scrub: true
+				}
+			});
+
+			// Reveal next section
+			gsap.to('#about-heading', {
+				y: 0,
+				opacity: 1,
+				duration: 1.5,
+				ease: 'power2.out',
+				scrollTrigger: {
+					trigger: '#about-heading',
+					start: 'top 80%',
+				}
+			});
+		} else {
+			// Fallback for reduced motion
+			gsap.set('#hero-logo, .hero-text, #hero-subtext, #about-heading', {
+				opacity: 1,
+				y: 0
+			});
+		}
+	</script>
+</Layout>
