@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Luminous Vishnu sanctum artwork</title>
+  <desc id="desc">A respectful stylized Vishnu-inspired sanctum image with lotus base, conch, discus, gold aura, and temple lamp light.</desc>
+  <defs>
+    <radialGradient id="aura" cx="50%" cy="38%" r="54%">
+      <stop offset="0" stop-color="#fff8c9" stop-opacity="1"/>
+      <stop offset="0.2" stop-color="#f8d678" stop-opacity="0.92"/>
+      <stop offset="0.48" stop-color="#bd6b38" stop-opacity="0.46"/>
+      <stop offset="1" stop-color="#120807" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b1b16"/>
+      <stop offset="0.46" stop-color="#130b09"/>
+      <stop offset="1" stop-color="#090504"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff1ad"/>
+      <stop offset="0.48" stop-color="#d39b42"/>
+      <stop offset="1" stop-color="#7b341f"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="1600" fill="none"/>
+  <circle cx="600" cy="550" r="560" fill="url(#aura)"/>
+  <circle cx="600" cy="530" r="300" fill="#f2b94e" opacity="0.17" filter="url(#soft)"/>
+  <path d="M122 1510 C248 1298 333 1150 356 967 C379 784 322 625 411 486 C461 408 523 363 600 363 C677 363 739 408 789 486 C878 625 821 784 844 967 C867 1150 952 1298 1078 1510 Z" fill="#080403" opacity="0.68"/>
+  <path d="M306 1435 C364 1322 420 1254 480 1219 C534 1187 666 1187 720 1219 C780 1254 836 1322 894 1435 Z" fill="#20100c"/>
+  <ellipse cx="600" cy="1332" rx="290" ry="75" fill="#5a251b" opacity="0.72"/>
+  <path d="M359 1328 C425 1264 487 1232 545 1234 C512 1287 462 1322 395 1338 Z" fill="url(#gold)" opacity="0.74"/>
+  <path d="M841 1328 C775 1264 713 1232 655 1234 C688 1287 738 1322 805 1338 Z" fill="url(#gold)" opacity="0.74"/>
+  <path d="M481 1274 C510 1189 548 1137 600 1137 C652 1137 690 1189 719 1274 C686 1306 514 1306 481 1274 Z" fill="#132d35"/>
+  <path d="M512 704 C520 614 552 557 600 557 C648 557 680 614 688 704 L724 1138 C681 1174 519 1174 476 1138 Z" fill="#184b55"/>
+  <path d="M531 738 C553 765 647 765 669 738 L692 1130 C651 1154 549 1154 508 1130 Z" fill="#0f3339" opacity="0.74"/>
+  <circle cx="600" cy="476" r="79" fill="#6dc1c3"/>
+  <path d="M521 442 C548 363 652 363 679 442 C642 423 558 423 521 442 Z" fill="url(#gold)"/>
+  <path d="M509 505 C543 549 657 549 691 505 C676 595 524 595 509 505 Z" fill="#0a272c" opacity="0.38"/>
+  <path d="M402 710 C305 755 250 848 212 983" stroke="url(#gold)" stroke-width="34" stroke-linecap="round" fill="none"/>
+  <path d="M798 710 C895 755 950 848 988 983" stroke="url(#gold)" stroke-width="34" stroke-linecap="round" fill="none"/>
+  <path d="M460 841 C381 919 350 1008 336 1148" stroke="#6dc1c3" stroke-width="30" stroke-linecap="round" fill="none"/>
+  <path d="M740 841 C819 919 850 1008 864 1148" stroke="#6dc1c3" stroke-width="30" stroke-linecap="round" fill="none"/>
+  <circle cx="207" cy="982" r="54" fill="none" stroke="url(#gold)" stroke-width="18"/>
+  <path d="M971 934 C1024 962 1030 1040 981 1077 C931 1041 925 963 971 934 Z" fill="url(#gold)"/>
+  <path d="M343 1154 C396 1185 435 1219 458 1256" stroke="url(#gold)" stroke-width="24" stroke-linecap="round" fill="none"/>
+  <path d="M857 1154 C804 1185 765 1219 742 1256" stroke="url(#gold)" stroke-width="24" stroke-linecap="round" fill="none"/>
+  <path d="M600 575 L623 634 L600 719 L577 634 Z" fill="url(#gold)" opacity="0.95"/>
+  <path d="M160 1438 L1040 1438" stroke="#d39b42" stroke-width="3" opacity="0.42"/>
+  <g opacity="0.72">
+    <path d="M142 1358 C154 1319 178 1319 190 1358 C174 1381 158 1381 142 1358 Z" fill="#f5c45e"/>
+    <path d="M1010 1358 C1022 1319 1046 1319 1058 1358 C1042 1381 1026 1381 1010 1358 Z" fill="#f5c45e"/>
+    <rect x="126" y="1370" width="80" height="15" rx="7" fill="#70311f"/>
+    <rect x="994" y="1370" width="80" height="15" rx="7" fill="#70311f"/>
+  </g>
+</svg>

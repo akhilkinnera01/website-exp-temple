@@ -1,43 +1,31 @@
-# Astro Starter Kit: Minimal
+# Suryakshetra
 
-```sh
-npm create astro@latest -- --template minimal
+A cinematic Astro microsite built around the supplied ChatGPT temple panorama
+and temple-door push-in video. The upgraded version turns the assets into a
+scroll-entered temple experience, CSS 3D depth stage, generated light plates,
+and a cinematic editorial archive.
+
+## Commands
+
+```bash
+npm install
+npm run dev
+npm run build
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Stack
 
-## 🚀 Project Structure
+- Astro for a static, fast-loading microsite.
+- GSAP ScrollTrigger for restrained scroll choreography.
+- FFmpeg for optimized desktop and mobile video-to-scroll entry assets.
+- Local image derivatives in `public/generated/`.
+- CSS 3D for the layered temple model.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Current Direction
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The site treats the image as a living artifact rather than a background. The
+hero establishes the world, the entry scene scrubs through the supplied
+door-opening push-in, the depth stage breaks the panorama into spatial planes,
+and the light-study gallery shows how the image can evolve into a future
+AI-generated cinematic sequence.

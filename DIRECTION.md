@@ -1,45 +1,71 @@
-# DIRECTION: Varun Estates
+# Direction
 
 ## Thesis
-Varun Estates is a calm, respectful, confidence-building plotted-land brand that speaks to Telugu families and long-view investors with an organic, editorial, and highly dignified tone.
 
-## The Signature Moment
-A breathtaking, warm sunrise over open land that subtly shifts and deepens in focus as the user scrolls. This visual is accompanied by massive, elegant bilingual typography (English and beautiful Telugu script) that softly fades in and out, creating a magazine-like editorial pacing that commands trust rather than demanding urgency.
+Suryakshetra turns one ChatGPT temple panorama and one temple-door push-in video
+into an interactive temple entry experience with a 360-feeling outer world,
+video-scrubbed threshold crossing, depth plates, cinematic light states, and
+scroll-driven spatial composition.
+
+## Signature Moment
+
+The supplied 360-style panorama establishes the outer courtyard. A pinned scroll
+scene then uses the supplied 15-second, 360-frame push-in video as the true
+threshold moment; as the visitor scrolls, the doors open in footage and the
+camera moves toward the sanctum. The existing depth stage then supports the same
+thesis by breaking the panorama into spatial planes.
 
 ## Material Vocabulary
-sunbaked earth + warm morning light + deep navy
+
+Carved stone + sunset metal + smoked glass.
 
 ## Motion Language
-- **Easing:** `power2.inOut` (GSAP) and `cubic-bezier(0.4, 0, 0.2, 1)` (CSS)
-- **Duration:** 1.2s - 2.4s for major transitions
-- **Pacing:** Unhurried, deliberate, breathing.
+
+- Easing: `power3.out` for reveals, linear easing only for scroll-linked depth.
+- Duration: 1.0s to 1.25s for entrance motion.
+- Pacing: ceremonial, slow, and authored.
 
 ## Typography Direction
-- **Primary Serif (Headings):** Playfair Display (English) + Noto Serif Telugu (Telugu)
-- **Secondary Sans (Body/Data):** Inter (English) + Noto Sans Telugu (Telugu)
-- **Scale Rules:** Massive headings for the hero (`6rem+` desktop, `3.5rem+` mobile), generous line height (`1.6+` for body), and significant negative space around all text blocks.
+
+Georgia anchors the large editorial titles. System sans carries body text and
+navigation. Headings use fixed breakpoint sizes rather than viewport scaling,
+with zero letter spacing.
 
 ## Color Direction
-- **Deep Navy (Brand/Text):** `#0A192F` (derived from the logo's dark elements)
-- **Warm Gold/Sand (Brand/Accents):** `#C49A6C` (derived from the logo's gold arch)
-- **Earthy Linen (Backgrounds):** `#F7F5F0` (soft, organic base instead of stark white)
-- **Terracotta/Clay:** `#A85C4B` (for subtle warmth in UI elements or hover states)
 
-## Chosen Pipelines
-- **Astro:** To deliver a content-heavy, extremely fast initial load time.
-- **Nano Banana 2 (via Prompting):** To generate high-quality, editorial-style imagery of warm land and sunrises.
-- **GSAP ScrollTrigger:** To choreograph the buttery-smooth, unhurried scroll fades and the signature hero moment.
-- **CSS Scroll-Driven Motion:** For native, ultra-lightweight micro-interactions.
+- `#100b08` ink
+- `#d39b42` sunset gold
+- `#a83c2d` vermilion
+- `#345f4a` temple green
+- `#efe1c3` stone sand
+
+## Pipelines
+
+- Supplied ChatGPT image: source visual for every production plate.
+- Local image creation: Sharp generated master, light studies, and depth slices from the supplied panorama.
+- FFmpeg video-to-scroll: compresses the supplied push-in video into a fast-start H.264 runtime asset and poster.
+- CSS 3D stage: creates a spatial image model without adding WebGL weight.
+- GSAP ScrollTrigger: drives video scrubbing, hero, depth stage, scroll meter, and reveal cadence.
+- Astro static build: keeps the experience deployable as a static microsite.
+- Future ChatGPT image generation: prompts in `PROMPTS.md` describe companion stills for a true multi-frame sequence.
 
 ## Performance Budget
-- **Cinematic Showcase:** Highest quality assets prioritised. 4MB+ budget acceptable (per your request for best quality), relying on modern network speeds, but with crisp LCP (under 2.5s) and absolutely zero jank on scroll.
 
-## Reference Sites & Inspiration Deepdive
-- **Lodha Group / Aman Resorts (Conceptual):** Borrowing the large, elegant typography, slow fades, and the sheer amount of breathing room that feels like a high-end magazine.
-- **Immersive Garden (Pacing):** Borrowing the continuous, flowing scroll journey that never feels disjointed.
+Standard premium with a cinematic entry exception. The page uses optimized JPG
+and WebP derivatives for still imagery, plus short-GOP no-audio H.264 videos
+for the signature threshold on desktop and mobile. No WebGL runtime is used in
+this pass.
 
-### Inspiration Deepdive
-- **Breadth:** Sites like those found on Godly and Awwwards that prioritize minimal UI over content-heavy grids.
-- **Taste:** Clean architectural portfolios (e.g., Active Theory's structural work) that treat land and space with respect.
-- **Vocabulary:** Generous vertical rhythm, CSS `clip-path` reveals for images, and staggered text-line reveals.
-- **Mood Board:** Sun-drenched landscapes, crisp Telugu typography paired with classic English serifs, creating an emotional register of longevity and heritage.
+## Judge Bar
+
+The earlier version was around 2 out of 10 for a serious frontend contest. This
+version moves toward 7 because it now has a premise, a real video-driven
+scroll-entry signature moment, custom visual production, interactive depth,
+light-state controls, and a coherent motion system.
+
+## References
+
+- Active Theory: cinematic first impression and spatial confidence.
+- Immersive Garden: museum-like pacing and image authority.
+- Codrops demos: scroll-linked image choreography.
+- Godly gallery patterns: severe typography and polished editorial rhythm.

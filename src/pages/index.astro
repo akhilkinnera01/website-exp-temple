@@ -2,127 +2,509 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Varun Estates | Premium Plotted Land">
-	<main class="relative w-full h-[200vh]">
-		<!-- Sticky Hero Section -->
-		<section class="sticky top-0 h-screen w-full overflow-hidden bg-[#0A192F] flex flex-col justify-center items-center" id="hero-section">
-			<!-- Background Image with zoom effect -->
-			<div class="absolute inset-0 w-full h-full z-0 origin-center scale-100 opacity-60" id="hero-bg">
-				<!-- Placeholder for the Nano Banana generated sunrise image -->
-				<div class="w-full h-full bg-gradient-to-b from-[#0A192F] to-[#A85C4B]/50"></div>
-			</div>
-			
-			<!-- Content overlay -->
-			<div class="relative z-10 w-full max-w-7xl px-6 md:px-12 mx-auto flex flex-col items-center justify-center text-center mt-20">
-				<!-- Logo -->
-				<img src="/logo.png" alt="Varun Estates Logo" class="w-24 md:w-32 mb-12 opacity-0" id="hero-logo" />
-				
-				<!-- Bilingual Typography -->
-				<h1 class="text-5xl md:text-8xl lg:text-9xl text-[#F7F5F0] leading-tight tracking-tight mb-6 flex flex-col gap-4">
-					<span class="opacity-0 translate-y-12 hero-text block">Land, Honored.</span>
-					<span class="opacity-0 translate-y-12 hero-text block text-4xl md:text-7xl text-[#C49A6C] font-serif">గౌరవప్రదమైన భూమి.</span>
-				</h1>
-				<p class="text-lg md:text-2xl text-[#F7F5F0]/80 max-w-2xl font-light opacity-0 translate-y-8 mt-8" id="hero-subtext">
-					A calm, respectful, and confidence-building land buying experience for the long-view investor.
-				</p>
-			</div>
-		</section>
-		
-		<!-- Next Section Placeholder to allow scrolling -->
-		<section class="relative z-20 bg-[#F7F5F0] w-full min-h-screen rounded-t-[3rem] -mt-12 flex flex-col items-center justify-center py-32 px-6">
-			<h2 class="text-4xl md:text-6xl text-[#0A192F] mb-8 font-serif opacity-0 translate-y-12" id="about-heading">The Varun Promise</h2>
-			<p class="text-xl text-[#0A192F]/70 max-w-3xl text-center leading-relaxed">
-				We believe in transparency, dignity, and heritage. Discover land ventures built with the Telugu family in mind.
-			</p>
-		</section>
-	</main>
+<Layout title="Suryakshetra | 3D Temple Archive">
+  <main id="main" class="site-shell">
+    <header class="site-nav" aria-label="Primary">
+      <a href="#main" class="brand-mark" aria-label="Suryakshetra home">
+        <span>Surya</span>
+        <span>Kshetra</span>
+      </a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#entry">Entry</a>
+        <a href="#depth">Depth</a>
+        <a href="#plates">Plates</a>
+        <a href="#ritual">Ritual</a>
+        <a href="#system">System</a>
+      </nav>
+    </header>
 
-	<script>
-		import { gsap } from 'gsap';
-		import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    <section class="hero-section" aria-labelledby="hero-title">
+      <img
+        src="/generated/temple-master.jpg"
+        alt="A panoramic golden hour temple courtyard with ornate gopurams, wet stone paths, people, lamps, and sunset sky."
+        class="hero-image"
+      />
+      <div class="hero-veil" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="sun-line" aria-hidden="true"></div>
 
-		gsap.registerPlugin(ScrollTrigger);
+      <div class="hero-content">
+        <p class="eyebrow reveal-text">Interactive temple archive</p>
+        <h1 id="hero-title" class="hero-title reveal-text">
+          The frame becomes a sacred machine.
+        </h1>
+        <p class="hero-copy reveal-text">
+          A cinematic panorama rebuilt into depth plates, light states, and a
+          scroll-driven temple model that treats one image like a living world.
+        </p>
+        <div class="hero-actions reveal-text">
+          <a class="text-command primary-command" href="#entry">Enter temple</a>
+          <a class="text-command ghost-command" href="#plates">View light studies</a>
+        </div>
+      </div>
 
-		// Respect prefers-reduced-motion
-		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      <div class="hero-scene reveal-text" aria-hidden="true">
+        <div class="depth-rig hero-rig">
+          <img class="depth-layer depth-sky" src="/generated/depth-sky.webp" alt="" />
+          <img class="depth-layer depth-left" src="/generated/depth-left-court.webp" alt="" />
+          <img class="depth-layer depth-right" src="/generated/depth-right-horizon.webp" alt="" />
+          <img class="depth-layer depth-tower" src="/generated/depth-gopuram.webp" alt="" />
+          <img class="depth-layer depth-floor" src="/generated/depth-foreground.webp" alt="" />
+          <div class="depth-glow"></div>
+        </div>
+      </div>
 
-		if (!prefersReducedMotion) {
-			// Initial load animation
-			const tl = gsap.timeline();
-			
-			tl.to('#hero-logo', {
-				opacity: 1,
-				duration: 1.5,
-				ease: 'power2.inOut'
-			})
-			.to('.hero-text', {
-				y: 0,
-				opacity: 1,
-				duration: 1.2,
-				stagger: 0.3,
-				ease: 'power3.out'
-			}, '-=1.0')
-			.to('#hero-subtext', {
-				y: 0,
-				opacity: 1,
-				duration: 1.2,
-				ease: 'power2.out'
-			}, '-=0.8');
+      <aside class="hero-index" aria-label="Scene index">
+        <span>007</span>
+        <span>Depth Archive</span>
+      </aside>
 
-			// Scroll-scrubbed signature moment
-			gsap.to('#hero-bg', {
-				scale: 1.15,
-				opacity: 0.3,
-				ease: 'none',
-				scrollTrigger: {
-					trigger: '#hero-section',
-					start: 'top top',
-					end: 'bottom top',
-					scrub: true
-				}
-			});
+      <div class="scroll-meter" aria-hidden="true">
+        <span></span>
+      </div>
+    </section>
 
-			gsap.to('.hero-text', {
-				y: -50,
-				opacity: 0,
-				ease: 'none',
-				scrollTrigger: {
-					trigger: '#hero-section',
-					start: 'top top',
-					end: 'bottom top',
-					scrub: true
-				}
-			});
+    <section id="entry" class="entry-section" aria-labelledby="entry-title">
+      <div class="entry-sticky">
+        <div class="entry-video-world" aria-hidden="true">
+          <div class="entry-video-atmosphere"></div>
+          <video
+            class="entry-video"
+            poster="/generated/entry-pushin-poster.jpg"
+            muted
+            playsinline
+            preload="auto"
+          >
+            <source src="/generated/entry-pushin-mobile.mp4" type="video/mp4" media="(max-width: 720px)" />
+            <source src="/generated/entry-pushin.mp4" type="video/mp4" />
+          </video>
+          <div class="entry-video-grade"></div>
+          <div class="entry-video-vignette"></div>
+        </div>
 
-			gsap.to('#hero-subtext, #hero-logo', {
-				y: -30,
-				opacity: 0,
-				ease: 'none',
-				scrollTrigger: {
-					trigger: '#hero-section',
-					start: 'top top',
-					end: 'bottom top',
-					scrub: true
-				}
-			});
+        <div class="entry-frame-count" aria-hidden="true">
+          <span>FFmpeg scrub</span>
+          <span>360 frames</span>
+        </div>
 
-			// Reveal next section
-			gsap.to('#about-heading', {
-				y: 0,
-				opacity: 1,
-				duration: 1.5,
-				ease: 'power2.out',
-				scrollTrigger: {
-					trigger: '#about-heading',
-					start: 'top 80%',
-				}
-			});
-		} else {
-			// Fallback for reduced motion
-			gsap.set('#hero-logo, .hero-text, #hero-subtext, #about-heading', {
-				opacity: 1,
-				y: 0
-			});
-		}
-	</script>
+        <div class="entry-copy">
+          <p class="eyebrow">Scroll threshold</p>
+          <h2 id="entry-title">The camera crosses the threshold.</h2>
+          <p>
+            The supplied temple-door film now drives the entry. Scroll turns
+            the fifteen-second push-in into a frame-accurate passage from outer
+            court to inner sanctum.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="depth" class="depth-section" aria-labelledby="depth-title">
+      <div class="depth-sticky">
+        <div class="depth-copy reveal-up">
+          <p class="eyebrow">Signature moment</p>
+          <h2 id="depth-title">The panorama breaks apart in space.</h2>
+          <p>
+            Sky, tower, courtyard, horizon, and foreground are separated into
+            planes, then composed as a restrained 3D stage with scroll and
+            pointer response.
+          </p>
+        </div>
+
+        <div class="depth-theater" aria-label="Layered temple depth composition">
+          <div class="depth-rig depth-rig-large">
+            <img class="depth-layer depth-sky" src="/generated/depth-sky.webp" alt="Temple sky plate" />
+            <img class="depth-layer depth-left" src="/generated/depth-left-court.webp" alt="Left courtyard depth plate" />
+            <img class="depth-layer depth-right" src="/generated/depth-right-horizon.webp" alt="Right horizon depth plate" />
+            <img class="depth-layer depth-tower" src="/generated/depth-gopuram.webp" alt="Central gopuram depth plate" />
+            <img class="depth-layer depth-floor" src="/generated/depth-foreground.webp" alt="Foreground stone depth plate" />
+            <div class="depth-glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="plates" class="plates-section" aria-labelledby="plates-title">
+      <div class="plates-heading reveal-up">
+        <p class="eyebrow">Image creation pass</p>
+        <h2 id="plates-title">One image, four cinematic light states.</h2>
+        <p>
+          The source panorama is re-authored into gradeable plates: gold, blue
+          hour, stone, and vermilion. Each can become a future generated still
+          or a first-frame to last-frame video sequence.
+        </p>
+      </div>
+
+      <div class="plate-stage reveal-up">
+        <figure class="plate-card plate-card-main">
+          <img src="/generated/plate-gold.webp" alt="Golden temple light plate" />
+          <figcaption>Gold court</figcaption>
+        </figure>
+        <figure class="plate-card">
+          <img src="/generated/plate-bluehour.webp" alt="Blue hour temple light plate" />
+          <figcaption>Blue hour</figcaption>
+        </figure>
+        <figure class="plate-card">
+          <img src="/generated/plate-stone.webp" alt="Stone-toned temple light plate" />
+          <figcaption>Stone memory</figcaption>
+        </figure>
+        <figure class="plate-card">
+          <img src="/generated/plate-vermilion.webp" alt="Vermilion temple light plate" />
+          <figcaption>Vermilion dusk</figcaption>
+        </figure>
+      </div>
+
+      <div class="plate-controls reveal-up" aria-label="Choose hero light state">
+        <button type="button" class="plate-button is-active" data-plate="/generated/plate-gold.webp" data-caption="Gold court">Gold</button>
+        <button type="button" class="plate-button" data-plate="/generated/plate-bluehour.webp" data-caption="Blue hour">Blue</button>
+        <button type="button" class="plate-button" data-plate="/generated/plate-stone.webp" data-caption="Stone memory">Stone</button>
+        <button type="button" class="plate-button" data-plate="/generated/plate-vermilion.webp" data-caption="Vermilion dusk">Vermilion</button>
+      </div>
+    </section>
+
+    <section id="ritual" class="ritual-section" aria-labelledby="ritual-title">
+      <div class="sticky-observatory">
+        <img
+          src="/generated/temple-master.jpg"
+          alt="Wide temple complex panorama repeated as a close observation plate."
+          class="observatory-image"
+        />
+        <div class="observatory-shade" aria-hidden="true"></div>
+        <div class="observation-panel reveal-up">
+          <p class="eyebrow">Living artifact</p>
+          <h2 id="ritual-title">A temple scene with its own interface.</h2>
+          <p>
+            The archive holds architectural scale, ritual movement, material
+            texture, and light direction as separate layers instead of treating
+            the image like wallpaper.
+          </p>
+        </div>
+        <div class="temple-markers" aria-label="Image focal points">
+          <button class="marker marker-left" type="button">
+            <span>Procession</span>
+          </button>
+          <button class="marker marker-center is-active" type="button">
+            <span>Gopuram</span>
+          </button>
+          <button class="marker marker-right" type="button">
+            <span>Horizon</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="materials" class="materials-section" aria-labelledby="materials-title">
+      <div class="section-kicker reveal-up">
+        <p class="eyebrow">Material language</p>
+        <h2 id="materials-title">Stone, flame, sky, and procession.</h2>
+      </div>
+
+      <div class="material-grid">
+        <article class="material-card reveal-up">
+          <span>01</span>
+          <h3>Carved Density</h3>
+          <p>
+            The interface borrows the temple surface logic: detailed where the
+            eye expects craft, severe where the story needs quiet.
+          </p>
+        </article>
+        <article class="material-card reveal-up">
+          <span>02</span>
+          <h3>Sunset Metal</h3>
+          <p>
+            Gold behaves like light, not trim. It appears as glow, horizon,
+            active state, and ritual warmth.
+          </p>
+        </article>
+        <article class="material-card reveal-up">
+          <span>03</span>
+          <h3>Human Scale</h3>
+          <p>
+            The crowd and courtyard remain visible so the grand temple never
+            becomes an empty render.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="system" class="system-section" aria-labelledby="system-title">
+      <div class="system-copy reveal-up">
+        <p class="eyebrow">Contest logic</p>
+        <h2 id="system-title">From page to authored experience.</h2>
+        <p>
+          The upgraded build has a visual premise, image production layer, depth
+          mechanic, interaction model, and a coherent performance budget.
+        </p>
+      </div>
+
+      <div class="timeline" aria-label="Experience sequence">
+        <div class="timeline-item reveal-up">
+          <span>01</span>
+          <p>Hero establishes the image as a cinematic world, not a banner.</p>
+        </div>
+        <div class="timeline-item reveal-up">
+          <span>02</span>
+          <p>Depth stage separates the panorama into moving planes.</p>
+        </div>
+        <div class="timeline-item reveal-up">
+          <span>03</span>
+          <p>Light studies create a path toward generated companion frames.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section" aria-labelledby="closing-title">
+      <img
+        src="/generated/plate-bluehour.webp"
+        alt="Blue hour version of the temple panorama."
+        class="closing-image"
+      />
+      <div class="closing-overlay" aria-hidden="true"></div>
+      <div class="closing-content reveal-up">
+        <p class="eyebrow">Suryakshetra archive</p>
+        <h2 id="closing-title">A single frame, rebuilt into a world.</h2>
+        <p>
+          The next leap is a true AI image sequence: dawn, gold, blue hour, and
+          lamp-lit night interpolated into scroll-scrubbed cinema.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const root = document.documentElement;
+    const markers = document.querySelectorAll('.marker');
+    const plateButtons = document.querySelectorAll('.plate-button');
+    const mainPlateImage = document.querySelector('.plate-card-main img');
+    const mainPlateCaption = document.querySelector('.plate-card-main figcaption');
+
+    plateButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const plate = button.getAttribute('data-plate');
+        const caption = button.getAttribute('data-caption') ?? button.textContent?.trim() ?? 'Light study';
+        if (!plate) return;
+        root.style.setProperty('--active-plate', `url("${plate}")`);
+        mainPlateImage?.setAttribute('src', plate);
+        mainPlateImage?.setAttribute('alt', `${caption} temple light plate`);
+        if (mainPlateCaption) mainPlateCaption.textContent = caption;
+        plateButtons.forEach((item) => item.classList.remove('is-active'));
+        button.classList.add('is-active');
+      });
+    });
+
+    markers.forEach((marker) => {
+      marker.addEventListener('click', () => {
+        markers.forEach((item) => item.classList.remove('is-active'));
+        marker.classList.add('is-active');
+      });
+    });
+
+    gsap.set('.entry-copy', { opacity: 1 });
+
+    const entryVideo = document.querySelector('.entry-video');
+    if (entryVideo instanceof HTMLVideoElement && window.matchMedia('(max-width: 720px)').matches) {
+      entryVideo.poster = '/generated/entry-pushin-poster-mobile.jpg';
+    }
+
+    const attachEntryScrub = () => {
+      if (!(entryVideo instanceof HTMLVideoElement) || !entryVideo.duration) return;
+
+      entryVideo.pause();
+      let targetTime = 0;
+      let smoothTime = 0;
+      let animationFrame = 0;
+      const maxTime = Math.max(0, entryVideo.duration - 0.02);
+      const smallScreen = window.matchMedia('(max-width: 720px)').matches;
+      const followStrength = smallScreen ? 0.16 : 0.2;
+      const snapDistance = smallScreen ? 0.018 : 0.014;
+
+      const tick = () => {
+        smoothTime += (targetTime - smoothTime) * followStrength;
+        const shouldSnap = Math.abs(entryVideo.currentTime - smoothTime) > snapDistance;
+        const shouldFinish = Math.abs(targetTime - smoothTime) > 0.004;
+
+        if (shouldSnap) {
+          entryVideo.currentTime = Math.min(maxTime, Math.max(0, smoothTime));
+        }
+
+        if (shouldFinish) {
+          animationFrame = window.requestAnimationFrame(tick);
+        } else {
+          smoothTime = targetTime;
+          if (Math.abs(entryVideo.currentTime - targetTime) > snapDistance) {
+            entryVideo.currentTime = targetTime;
+          }
+          animationFrame = 0;
+        }
+      };
+
+      ScrollTrigger.create({
+        trigger: '.entry-section',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 0.65,
+        onUpdate: (self) => {
+          targetTime = Math.min(maxTime, maxTime * self.progress);
+          if (Number.isFinite(targetTime) && !animationFrame) {
+            animationFrame = window.requestAnimationFrame(tick);
+          }
+        },
+        onKill: () => {
+          if (animationFrame) window.cancelAnimationFrame(animationFrame);
+        }
+      });
+    };
+
+    if (!reduceMotion && entryVideo instanceof HTMLVideoElement) {
+      if (entryVideo.readyState >= 1) {
+        attachEntryScrub();
+      } else {
+        entryVideo.addEventListener('loadedmetadata', attachEntryScrub, { once: true });
+      }
+    } else if (entryVideo instanceof HTMLVideoElement) {
+      entryVideo.currentTime = 0;
+    }
+
+    if (!reduceMotion) {
+      gsap.timeline({ defaults: { ease: 'power3.out' } })
+        .fromTo('.site-nav', { y: -18, opacity: 0 }, { y: 0, opacity: 1, duration: 1 })
+        .fromTo('.reveal-text', { y: 42, opacity: 0 }, {
+          y: 0,
+          opacity: 1,
+          duration: 1.25,
+          stagger: 0.12
+        }, '-=0.25')
+        .fromTo('.hero-index', { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, '-=0.6');
+
+      gsap.to('.hero-image', {
+        scale: 1.08,
+        yPercent: 4,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.hero-section',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+
+      gsap.to('.hero-rig', {
+        rotateY: -16,
+        rotateX: 7,
+        z: 60,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.hero-section',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+
+      gsap.to('.sun-line', {
+        scaleX: 1,
+        opacity: 0.95,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.hero-section',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+
+      const entryTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.entry-section',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      });
+
+      entryTimeline
+        .to('.entry-video-world', { scale: 1.045, ease: 'none' }, 0)
+        .to('.entry-video-grade', { opacity: 0.18, ease: 'none' }, 0.28)
+        .to('.entry-video-atmosphere', { opacity: 0.68, scale: 1.05, ease: 'none' }, 0)
+        .to('.entry-frame-count', { opacity: 0, yPercent: 30, ease: 'none' }, 0.08)
+        .to('.entry-copy', { yPercent: -34, opacity: 0, ease: 'none' }, 0.08);
+
+      gsap.to('.depth-rig-large', {
+        rotateY: 18,
+        rotateX: -6,
+        scale: 1.08,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.depth-section',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+
+      gsap.to('.plate-card-main', {
+        rotateY: -18,
+        z: 70,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.plates-section',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+
+      gsap.to('.scroll-meter span', {
+        height: '100%',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.site-shell',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      });
+
+      gsap.utils.toArray('.reveal-up').forEach((item) => {
+        gsap.fromTo(item, { y: 44, opacity: 0 }, {
+          y: 0,
+          opacity: 1,
+          duration: 1.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 84%'
+          }
+        });
+      });
+
+      gsap.to('.observatory-image', {
+        scale: 1.08,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.ritual-section',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+
+      window.addEventListener('pointermove', (event) => {
+        const x = event.clientX / window.innerWidth;
+        const y = event.clientY / window.innerHeight;
+        root.style.setProperty('--pointer-x', `${x * 100}%`);
+        root.style.setProperty('--pointer-y', `${y * 100}%`);
+        root.style.setProperty('--tilt-y', `${(x - 0.5) * 14}deg`);
+        root.style.setProperty('--tilt-x', `${(0.5 - y) * 10}deg`);
+      }, { passive: true });
+    } else {
+      gsap.set('.site-nav, .reveal-text, .hero-index, .reveal-up', { opacity: 1, y: 0 });
+    }
+  </script>
 </Layout>

@@ -1,14 +1,32 @@
-# MOTION CHOREOGRAPHY: Varun Estates
+# Motion
 
-## Core Rules
-- **Easing:** `power2.inOut` for initial loads, `none` (linear) for scroll-scrubbed moments, `power2.out` for reveals.
-- **Respect:** All animations must respect `prefers-reduced-motion` at the CSS layer or GSAP timeline level.
+## Principle
 
-## Sequence 1: The Initial Reveal (Hero)
-1. **Logo:** Fades in over 1.5s.
-2. **Typography (Bilingual):** Staggers in from below (y: 12) with `power3.out`. Telugu script lags slightly behind English for an elegant dual-reading rhythm.
-3. **Subtext:** Fades in softly beneath.
+The page has one signature gesture: the visitor scrolls through the supplied
+temple-door push-in video, then the panorama splits into a spatial temple model
+and recomposes into cinematic light studies.
 
-## Sequence 2: The Signature Moment (Scroll Scrub)
-1. **Background:** Scales slowly from 1.0 to 1.15 while its opacity dims to 0.3 to push the land "back" and pull the user "forward".
-2. **Typography:** Translates up (y: -50) and fades out at the exact rate of the user's scroll.
+## Rules
+
+- Large text enters once with `power3.out`.
+- Scroll-linked movement uses linear easing and stays slow.
+- Entry scroll progress maps to the 15-second, 360-frame video through a
+  smoothed animation-frame follower.
+- The video grade should feel like approach and glow, not a jump scare.
+- The old CSS lamps, smoke, and synthetic doors stay removed from the runtime.
+- Depth plates rotate with scroll and respond gently to pointer position.
+- Supporting sections reveal upward by a small distance only.
+- Plate controls swap light state without changing layout.
+- Marker labels appear on hover, focus, or click.
+- `prefers-reduced-motion` disables choreography and keeps content readable.
+
+## Values
+
+- Entrance duration: 1.0s to 1.25s.
+- Reveal offset: 42px to 44px.
+- Hero scale range: 1.02 to 1.08.
+- Entry video scrub range: 0.00s to 14.98s.
+- Entry scroll scrub smoothing: 0.65s GSAP scrub plus frame-level time easing.
+- Entry atmosphere scale range: 1.00 to 1.05.
+- Depth model rotation range: around 16 to 18 degrees on scroll.
+- Observatory scale range: 1.00 to 1.08.
